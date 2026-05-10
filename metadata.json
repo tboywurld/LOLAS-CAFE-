@@ -1,0 +1,8 @@
+{
+  "name": "Lola's Café",
+  "description": "Premium fast-casual cafe in Abraka, Delta State, Nigeria - Gourmet food, signature drinks, student-friendly luxury, and Lola's Royal Rewards program.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

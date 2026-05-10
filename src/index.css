@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-burgundy: #1a0505;
+  --color-burgundy-medium: #2d0b0b;
+  --color-burgundy-light: #4a0e0e;
+  --color-gold: #d4af37;
+  --color-gold-dark: #c4a02c;
+  --color-cream: #fdfcf5;
+}
+
+@layer base {
+  body {
+    @apply bg-burgundy text-cream font-sans selection:bg-gold selection:text-burgundy;
+  }
+}
+
+.glass-nav {
+  @apply backdrop-blur-md bg-burgundy/90 border-b border-gold/20;
+}
+
+.text-gradient-gold {
+  @apply bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent;
+}
+
+.premium-card {
+  @apply bg-burgundy-medium border border-gold/10 rounded-none overflow-hidden transition-all duration-500 hover:border-gold/40;
+}
+
+.btn-primary {
+  @apply bg-gold text-burgundy font-bold px-8 py-3 rounded-none uppercase tracking-tighter transition-all duration-300 hover:bg-gold-dark hover:scale-105 active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply border border-cream/30 text-cream font-bold px-8 py-3 rounded-none uppercase tracking-tighter transition-all duration-300 hover:bg-white/5 active:scale-95 flex items-center justify-center gap-2;
+}
+
+@keyframes steam {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+}
+
+.steam-effect {
+  @apply absolute top-0 left-1/4 w-1/2 h-full pointer-events-none overflow-hidden;
+}
+
+.steam-line {
+  @apply absolute bottom-0 left-1/2 w-1 h-32 bg-white blur-xl;
+  animation: steam 4s infinite;
+}
+
+.steam-line:nth-child(2) {
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+.steam-line:nth-child(3) {
+  left: 60%;
+  animation-delay: 2s;
+  animation-duration: 3s;
+}
+
+
